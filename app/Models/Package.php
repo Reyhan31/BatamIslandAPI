@@ -14,7 +14,8 @@ class Package extends Model
     protected $fillable = [
         'packageName',
         'weekDayPrice',
-        'weekEndPrice',
+        'saturdayPrice',
+        'sundayPrice',
         "isDeleted",
     ];
 }

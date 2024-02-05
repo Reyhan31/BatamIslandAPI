@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string("packageName");
             $table->decimal("weekDayPrice", 10, 2); 
-            $table->decimal("weekEndPrice", 10, 2);
+            $table->decimal("saturdayPrice", 10, 2);
+            $table->decimal("sundayPrice", 10, 2);
             $table->boolean("isDeleted"); 
         });
     }

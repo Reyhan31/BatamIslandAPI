@@ -26,7 +26,8 @@ class PackageRequest extends FormRequest
         return [
             'packageName' => 'required|string|max:255',
             'weekDayPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
-            'weekEndPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
+            'saturdayPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
+            'sundayPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
         ];
     }
 }
