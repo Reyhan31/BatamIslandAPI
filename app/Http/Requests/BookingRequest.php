@@ -24,6 +24,7 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
+            // 'file_id' => 'required|string|max:255',
             'date' => 'required|date',
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',

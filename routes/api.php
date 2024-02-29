@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\FileController;
 use App\Models\Bookings;
 
 /*
@@ -35,6 +36,8 @@ Route::post('sendBookingMail', [MailController::class, 'sendBookingMail']);
 Route::post('sendContactUsMail', [MailController::class, 'sendContactUsMail']);
 Route::post('sendMembershipMail', [MailController::class, 'sendMembershipMail']);
 Route::post('sendSubscribeMail', [MailController::class, 'sendSubscribeMail']);
+Route::post('upload', [FileController::class, 'store']);
+Route::get('/getFile/{id}', [FileController::class, 'getFile']);
 
 
 Route::group([

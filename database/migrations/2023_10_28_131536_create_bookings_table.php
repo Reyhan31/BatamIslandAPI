@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string("custom_id");
             $table->string("status");
-            $table->date("date");
+            $table->dateTime("date");
             $table->string("name");
             $table->string("email");
             $table->string("phoneNumber");

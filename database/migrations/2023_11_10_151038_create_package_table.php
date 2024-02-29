@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('package', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer("file_id");
             $table->string("packageName");
             $table->decimal("weekDayPrice", 10, 2); 
             $table->decimal("saturdayPrice", 10, 2);

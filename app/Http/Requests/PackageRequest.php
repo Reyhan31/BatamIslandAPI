@@ -24,6 +24,7 @@ class PackageRequest extends FormRequest
     public function rules()
     {
         return [
+            'file_id' => 'required|numeric|max:255',
             'packageName' => 'required|string|max:255',
             'weekDayPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
             'saturdayPrice' => 'required|numeric|between:0,999999999.99', // Adjust the range as needed
