@@ -22,6 +22,8 @@ class MailController extends Controller
         try{
 
             Mail::to(env("MAIL_TO"))->send(new bookingsMail($request));
+            Mail::to(env("MAIL_TO_2"))->send(new bookingsMail($request));
+            Mail::to(env("MAIL_TO_3"))->send(new bookingsMail($request));
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -37,6 +39,8 @@ class MailController extends Controller
         try{
 
             Mail::to(env("MAIL_TO"))->send(new contactUsMail($request));
+            Mail::to(env("MAIL_TO_2"))->send(new contactUsMail($request));
+            Mail::to(env("MAIL_TO_3"))->send(new contactUsMail($request));
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -52,6 +56,8 @@ class MailController extends Controller
         try{
 
             Mail::to(env("MAIL_TO"))->send(new membershipMail($request));
+            Mail::to(env("MAIL_TO_2"))->send(new membershipMail($request));
+            Mail::to(env("MAIL_TO_3"))->send(new membershipMail($request));
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -66,6 +72,8 @@ class MailController extends Controller
         try{
 
             Mail::to(env("MAIL_TO"))->send(new subscribeMail($request));
+            Mail::to(env("MAIL_TO_2"))->send(new subscribeMail($request));
+            Mail::to(env("MAIL_TO_3"))->send(new subscribeMail($request));
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
