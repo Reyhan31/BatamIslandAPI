@@ -10,6 +10,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\WelcomePanelController;
 use App\Http\Controllers\HomeBookingPanelController;
+use App\Http\Controllers\HomePromotionPanelController;
 use App\Models\Bookings;
 
 /*
@@ -48,7 +49,8 @@ Route::get('/getFile/home/WelcomePanel', [WelcomePanelController::class, 'getFil
 Route::post('/upload/home/BookingPanel', [HomeBookingPanelController::class, 'store']);
 Route::get('/getFile/home/BookingPanel', [HomeBookingPanelController::class, 'getFile']);
 
-
+Route::post('/upload/home/PromotionPanel', [HomePromotionPanelController::class, 'store']);
+Route::get('/getFile/home/PromotionPanel', [HomePromotionPanelController::class, 'getFile']);
 
 
 Route::group([
