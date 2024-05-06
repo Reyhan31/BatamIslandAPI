@@ -11,6 +11,7 @@ use App\Http\Controllers\FileController;
 use App\Http\Controllers\WelcomePanelController;
 use App\Http\Controllers\HomeBookingPanelController;
 use App\Http\Controllers\HomePromotionPanelController;
+use App\Http\Controllers\HomeNewsPanelController;
 use App\Models\Bookings;
 
 /*
@@ -51,6 +52,9 @@ Route::get('/getFile/home/BookingPanel', [HomeBookingPanelController::class, 'ge
 
 Route::post('/upload/home/PromotionPanel', [HomePromotionPanelController::class, 'store']);
 Route::get('/getFile/home/PromotionPanel', [HomePromotionPanelController::class, 'getFile']);
+
+Route::post('/upload/home/NewsPanel', [HomeNewsPanelController::class, 'store']);
+Route::get('/getFile/home/NewsPanel', [HomeNewsPanelController::class, 'getFile']);
 
 
 Route::group([
