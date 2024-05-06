@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\WelcomePanelController;
+use App\Http\Controllers\HomeBookingPanelController;
 use App\Models\Bookings;
 
 /*
@@ -36,8 +38,17 @@ Route::post('sendBookingMail', [MailController::class, 'sendBookingMail']);
 Route::post('sendContactUsMail', [MailController::class, 'sendContactUsMail']);
 Route::post('sendMembershipMail', [MailController::class, 'sendMembershipMail']);
 Route::post('sendSubscribeMail', [MailController::class, 'sendSubscribeMail']);
+
 Route::post('upload', [FileController::class, 'store']);
-Route::get('/getFile/{id}', [FileController::class, 'getFile']);
+// Route::get('/getFile/{id}', [FileController::class, 'getFile']);
+
+Route::post('/upload/home/WelcomePanel', [WelcomePanelController::class, 'store']);
+Route::get('/getFile/home/WelcomePanel', [WelcomePanelController::class, 'getFile']);
+
+Route::post('/upload/home/BookingPanel', [HomeBookingPanelController::class, 'store']);
+Route::get('/getFile/home/BookingPanel', [HomeBookingPanelController::class, 'getFile']);
+
+
 
 
 Route::group([
