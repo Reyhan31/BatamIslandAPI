@@ -14,6 +14,7 @@ use App\Http\Controllers\HomePromotionPanelController;
 use App\Http\Controllers\HomeNewsPanelController;
 use App\Http\Controllers\HomeMembershipPanelController;
 use App\Http\Controllers\HomeTakeATourPanelController;
+use App\Http\Controllers\HomeInstagramPanelController;
 use App\Models\Bookings;
 
 /*
@@ -44,7 +45,7 @@ Route::post('sendMembershipMail', [MailController::class, 'sendMembershipMail'])
 Route::post('sendSubscribeMail', [MailController::class, 'sendSubscribeMail']);
 
 Route::post('upload', [FileController::class, 'store']);
-// Route::get('/getFile/{id}', [FileController::class, 'getFile']);
+Route::get('/getFile/File/{id}', [FileController::class, 'getFile']);
 
 Route::post('/upload/home/WelcomePanel', [WelcomePanelController::class, 'store']);
 Route::get('/getFile/home/WelcomePanel', [WelcomePanelController::class, 'getFile']);
@@ -63,6 +64,9 @@ Route::get('/getFile/home/MembershipPanel', [HomeMembershipPanelController::clas
 
 Route::post('/upload/home/TakeATourPanel', [HomeTakeATourPanelController::class, 'store']);
 Route::get('/getFile/home/TakeATourPanel', [HomeTakeATourPanelController::class, 'getFile']);
+
+Route::get('/InstagramPanel/top4', [HomeInstagramPanelController::class, 'getTop4']);
+Route::resource('InstagramPanel', HomeInstagramPanelController::class);
 
 
 Route::group([
