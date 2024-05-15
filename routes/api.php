@@ -21,6 +21,7 @@ use App\Http\Controllers\FooterTextController;
 use App\Http\Controllers\PhoneIconController;
 use App\Http\Controllers\WhatsAppIconController;
 use App\Http\Controllers\LocationIconController;
+use App\Http\Controllers\EmailIconController;
 use App\Models\Bookings;
 
 /*
@@ -91,6 +92,9 @@ Route::get('/getFile/icon/whatsApp', [WhatsAppIconController::class, 'getFile'])
 
 Route::post('/upload/icon/location', [LocationIconController::class, 'store']);
 Route::get('/getFile/icon/location', [LocationIconController::class, 'getFile']);
+
+Route::post('/upload/icon/email', [EmailIconController::class, 'store']);
+Route::get('/getFile/icon/email', [EmailIconController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',
