@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeTakeATourPanelController;
 use App\Http\Controllers\HomeInstagramPanelController;
 use App\Http\Controllers\HomeFacilitiesPanelController;
 use App\Http\Controllers\HomeTextController;
+use App\Http\Controllers\FooterTextController;
 use App\Models\Bookings;
 
 /*
@@ -75,6 +76,9 @@ Route::resource('FacilitiesPanel', HomeFacilitiesPanelController::class);
 
 Route::get('/HomeText/getText', [HomeTextController::class, 'getText']);
 Route::resource('HomeText', HomeTextController::class);
+
+Route::get('/FooterText/getText', [FooterTextController::class, 'getText']);
+Route::resource('FooterText', FooterTextController::class);
 
 Route::group([
     'middleware' => 'api',
