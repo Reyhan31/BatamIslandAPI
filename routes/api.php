@@ -15,6 +15,7 @@ use App\Http\Controllers\HomeNewsPanelController;
 use App\Http\Controllers\HomeMembershipPanelController;
 use App\Http\Controllers\HomeTakeATourPanelController;
 use App\Http\Controllers\HomeInstagramPanelController;
+use App\Http\Controllers\HomeFacilitiesPanelController;
 use App\Models\Bookings;
 
 /*
@@ -68,6 +69,8 @@ Route::get('/getFile/home/TakeATourPanel', [HomeTakeATourPanelController::class,
 Route::get('/InstagramPanel/top4', [HomeInstagramPanelController::class, 'getTop4']);
 Route::resource('InstagramPanel', HomeInstagramPanelController::class);
 
+Route::get('/FacilitiesPanel/top4', [HomeFacilitiesPanelController::class, 'getTop4']);
+Route::resource('FacilitiesPanel', HomeFacilitiesPanelController::class);
 
 Route::group([
     'middleware' => 'api',
