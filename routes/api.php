@@ -20,6 +20,7 @@ use App\Http\Controllers\HomeTextController;
 use App\Http\Controllers\FooterTextController;
 use App\Http\Controllers\PhoneIconController;
 use App\Http\Controllers\WhatsAppIconController;
+use App\Http\Controllers\LocationIconController;
 use App\Models\Bookings;
 
 /*
@@ -87,6 +88,9 @@ Route::get('/getFile/icon/phone', [PhoneIconController::class, 'getFile']);
 
 Route::post('/upload/icon/whatsApp', [WhatsAppIconController::class, 'store']);
 Route::get('/getFile/icon/whatsApp', [WhatsAppIconController::class, 'getFile']);
+
+Route::post('/upload/icon/location', [LocationIconController::class, 'store']);
+Route::get('/getFile/icon/location', [LocationIconController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',
