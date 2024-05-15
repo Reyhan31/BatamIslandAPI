@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeInstagramPanelController;
 use App\Http\Controllers\HomeFacilitiesPanelController;
 use App\Http\Controllers\HomeTextController;
 use App\Http\Controllers\FooterTextController;
+use App\Http\Controllers\PhoneIconController;
 use App\Models\Bookings;
 
 /*
@@ -79,6 +80,9 @@ Route::resource('HomeText', HomeTextController::class);
 
 Route::get('/FooterText/getText', [FooterTextController::class, 'getText']);
 Route::resource('FooterText', FooterTextController::class);
+
+Route::post('/upload/icon/phone', [PhoneIconController::class, 'store']);
+Route::get('/getFile/icon/phone', [PhoneIconController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',

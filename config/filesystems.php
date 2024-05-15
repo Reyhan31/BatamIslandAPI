@@ -52,6 +52,14 @@ return [
             'throw' => false,
         ],
 
+        'public_icon' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/icon'),
+            'url' => env('APP_URL').'/storage/icon',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
