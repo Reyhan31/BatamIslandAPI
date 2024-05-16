@@ -60,6 +60,14 @@ return [
             'throw' => false,
         ],
 
+        'public_aboutus' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/aboutus'),
+            'url' => env('APP_URL').'/storage/aboutus',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

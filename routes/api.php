@@ -24,6 +24,10 @@ use App\Http\Controllers\LocationIconController;
 use App\Http\Controllers\EmailIconController;
 use App\Http\Controllers\WebIconController;
 use App\Http\Controllers\InstagramIconController;
+use App\Http\Controllers\AboutUsPanelController;
+use App\Http\Controllers\AboutUsContentPanelController;
+use App\Http\Controllers\AboutUsBannerPanelController;
+use App\Http\Controllers\AboutUsTextController;
 use App\Models\Bookings;
 
 /*
@@ -103,6 +107,18 @@ Route::get('/getFile/icon/web', [WebIconController::class, 'getFile']);
 
 Route::post('/upload/icon/instagram', [InstagramIconController::class, 'store']);
 Route::get('/getFile/icon/instagram', [InstagramIconController::class, 'getFile']);
+
+Route::post('/upload/aboutus/AboutUsPanel', [AboutUsPanelController::class, 'store']);
+Route::get('/getFile/aboutus/AboutUsPanel', [AboutUsPanelController::class, 'getFile']);
+
+Route::post('/upload/aboutus/ContentPanel', [AboutUsContentPanelController::class, 'store']);
+Route::get('/getFile/aboutus/ContentPanel', [AboutUsContentPanelController::class, 'getFile']);
+
+Route::post('/upload/aboutus/BannerPanel', [AboutUsBannerPanelController::class, 'store']);
+Route::get('/getFile/aboutus/BannerPanel', [AboutUsBannerPanelController::class, 'getFile']);
+
+Route::get('/AboutUsText/getText', [AboutUsTextController::class, 'getText']);
+Route::resource('AboutUsText', AboutUsTextController::class);
 
 Route::group([
     'middleware' => 'api',
