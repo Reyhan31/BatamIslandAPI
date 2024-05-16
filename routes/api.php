@@ -28,6 +28,7 @@ use App\Http\Controllers\AboutUsPanelController;
 use App\Http\Controllers\AboutUsContentPanelController;
 use App\Http\Controllers\AboutUsBannerPanelController;
 use App\Http\Controllers\AboutUsTextController;
+use App\Http\Controllers\GalleryController;
 use App\Models\Bookings;
 
 /*
@@ -119,6 +120,8 @@ Route::get('/getFile/aboutus/BannerPanel', [AboutUsBannerPanelController::class,
 
 Route::get('/AboutUsText/getText', [AboutUsTextController::class, 'getText']);
 Route::resource('AboutUsText', AboutUsTextController::class);
+
+Route::resource('Gallery', GalleryController::class);
 
 Route::group([
     'middleware' => 'api',
