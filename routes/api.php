@@ -22,6 +22,8 @@ use App\Http\Controllers\PhoneIconController;
 use App\Http\Controllers\WhatsAppIconController;
 use App\Http\Controllers\LocationIconController;
 use App\Http\Controllers\EmailIconController;
+use App\Http\Controllers\WebIconController;
+use App\Http\Controllers\InstagramIconController;
 use App\Models\Bookings;
 
 /*
@@ -95,6 +97,12 @@ Route::get('/getFile/icon/location', [LocationIconController::class, 'getFile'])
 
 Route::post('/upload/icon/email', [EmailIconController::class, 'store']);
 Route::get('/getFile/icon/email', [EmailIconController::class, 'getFile']);
+
+Route::post('/upload/icon/web', [WebIconController::class, 'store']);
+Route::get('/getFile/icon/web', [WebIconController::class, 'getFile']);
+
+Route::post('/upload/icon/instagram', [InstagramIconController::class, 'store']);
+Route::get('/getFile/icon/instagram', [InstagramIconController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',
