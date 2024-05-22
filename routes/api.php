@@ -31,6 +31,8 @@ use App\Http\Controllers\AboutUsTextController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactUsPanelController;
 use App\Http\Controllers\ContactUsTextController;
+use App\Http\Controllers\BookingPanelController;
+use App\Http\Controllers\BookingTextController;
 use App\Models\Bookings;
 
 /*
@@ -130,6 +132,12 @@ Route::get('/getFile/ContactUsPanel', [ContactUsPanelController::class, 'getFile
 
 Route::get('/ContactUsText/getText', [ContactUsTextController::class, 'getText']);
 Route::resource('ContactUsText', ContactUsTextController::class);
+
+Route::post('/upload/BookingPanel', [BookingPanelController::class, 'store']);
+Route::get('/getFile/BookingPanel', [BookingPanelController::class, 'getFile']);
+
+Route::get('/BookingText/getText', [BookingTextController::class, 'getText']);
+Route::resource('BookingText', BookingTextController::class);
 
 Route::group([
     'middleware' => 'api',
