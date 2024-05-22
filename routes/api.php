@@ -33,6 +33,7 @@ use App\Http\Controllers\ContactUsPanelController;
 use App\Http\Controllers\ContactUsTextController;
 use App\Http\Controllers\BookingPanelController;
 use App\Http\Controllers\BookingTextController;
+use App\Http\Controllers\MembershipPanelController;
 use App\Models\Bookings;
 
 /*
@@ -138,6 +139,9 @@ Route::get('/getFile/BookingPanel', [BookingPanelController::class, 'getFile']);
 
 Route::get('/BookingText/getText', [BookingTextController::class, 'getText']);
 Route::resource('BookingText', BookingTextController::class);
+
+Route::post('/upload/MembershipPanel', [MembershipPanelController::class, 'store']);
+Route::get('/getFile/MembershipPanel', [MembershipPanelController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',
