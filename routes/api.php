@@ -35,6 +35,7 @@ use App\Http\Controllers\BookingPanelController;
 use App\Http\Controllers\BookingTextController;
 use App\Http\Controllers\MembershipPanelController;
 use App\Http\Controllers\MembershipBiccGoldMemberPanelController;
+use App\Http\Controllers\MembershipTextController;
 use App\Models\Bookings;
 
 /*
@@ -146,6 +147,9 @@ Route::get('/getFile/MembershipPanel', [MembershipPanelController::class, 'getFi
 
 Route::post('/upload/MembershipBiccGoldMemberPanel', [MembershipBiccGoldMemberPanelController::class, 'store']);
 Route::get('/getFile/MembershipBiccGoldMemberPanel', [MembershipBiccGoldMemberPanelController::class, 'getFile']);
+
+Route::get('/MembershipText/getText', [MembershipTextController::class, 'getText']);
+Route::resource('MembershipText', MembershipTextController::class);
 
 Route::group([
     'middleware' => 'api',
