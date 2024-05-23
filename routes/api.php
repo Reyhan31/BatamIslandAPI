@@ -36,6 +36,11 @@ use App\Http\Controllers\BookingTextController;
 use App\Http\Controllers\MembershipPanelController;
 use App\Http\Controllers\MembershipBiccGoldMemberPanelController;
 use App\Http\Controllers\MembershipTextController;
+use App\Http\Controllers\PackagePanelController;
+use App\Http\Controllers\PackageTripPanel1Controller;
+use App\Http\Controllers\PackageTripPanel2Controller;
+use App\Http\Controllers\PackageTripPanel1ContentController;
+use App\Http\Controllers\PackageTripPanel2ContentController;
 use App\Models\Bookings;
 
 /*
@@ -150,6 +155,21 @@ Route::get('/getFile/MembershipBiccGoldMemberPanel', [MembershipBiccGoldMemberPa
 
 Route::get('/MembershipText/getText', [MembershipTextController::class, 'getText']);
 Route::resource('MembershipText', MembershipTextController::class);
+
+Route::post('/upload/PackagePanel', [PackagePanelController::class, 'store']);
+Route::get('/getFile/PackagePanel', [PackagePanelController::class, 'getFile']);
+
+Route::post('/upload/PackageTripPanel1', [PackageTripPanel1Controller::class, 'store']);
+Route::get('/getFile/PackageTripPanel1', [PackageTripPanel1Controller::class, 'getFile']);
+
+Route::post('/upload/PackageTripPanel2', [PackageTripPanel2Controller::class, 'store']);
+Route::get('/getFile/PackageTripPanel2', [PackageTripPanel2Controller::class, 'getFile']);
+
+Route::post('/upload/PackageTripPanel1Content', [PackageTripPanel1ContentController::class, 'store']);
+Route::get('/getFile/PackageTripPanel1Content', [PackageTripPanel1ContentController::class, 'getFile']);
+
+Route::post('/upload/PackageTripPanel2Content', [PackageTripPanel2ContentController::class, 'store']);
+Route::get('/getFile/PackageTripPanel2Content', [PackageTripPanel2ContentController::class, 'getFile']);
 
 Route::group([
     'middleware' => 'api',
