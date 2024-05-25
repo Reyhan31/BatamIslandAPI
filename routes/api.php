@@ -41,6 +41,7 @@ use App\Http\Controllers\PackageTripPanel1Controller;
 use App\Http\Controllers\PackageTripPanel2Controller;
 use App\Http\Controllers\PackageTripPanel1ContentController;
 use App\Http\Controllers\PackageTripPanel2ContentController;
+use App\Http\Controllers\PackageTextController;
 use App\Models\Bookings;
 
 /*
@@ -170,6 +171,9 @@ Route::get('/getFile/PackageTripPanel1Content', [PackageTripPanel1ContentControl
 
 Route::post('/upload/PackageTripPanel2Content', [PackageTripPanel2ContentController::class, 'store']);
 Route::get('/getFile/PackageTripPanel2Content', [PackageTripPanel2ContentController::class, 'getFile']);
+
+Route::get('/PackageText/getText', [PackageTextController::class, 'getText']);
+Route::resource('PackageText', PackageTextController::class);
 
 Route::group([
     'middleware' => 'api',
