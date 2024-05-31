@@ -44,12 +44,19 @@ class HomeTextController extends Controller
     {
         //
         $validatedData = $request->validate([
-            "WelcomeText" => 'required|string',
+            "WelcomeSubHeaderText" => 'required|string',
+            "WelcomeMainHeaderText" => 'required|string',
+            "WelcomeToText" => 'required|string',
+            "FacilitiesGolfCourseHeaderText" => 'required|string',
             "FacilitiesGolfCourseText" => 'required|string',
+            "FacilitiesTournamentsHeaderText" => 'required|string',
             "FacilitiesTournamentsText" => 'required|string',
+            "FacilitiesCaddiesHeaderText" => 'required|string',
             "FacilitiesCaddiesText" => 'required|string',
+            "FacilitiesGreenFieldsHeaderText" => 'required|string',
             "FacilitiesGreenFieldsText" => 'required|string',
             "BookingPanelText" => 'required|string',
+            "NewsText" => 'required|string',
             "MembershipPanelHeaderText" => 'required|string',
             "MembershipPanelSubText" => 'required|string',
             "TakeATourPanelHeaderText" => 'required|string',
@@ -96,12 +103,19 @@ class HomeTextController extends Controller
     {
         //
         $validatedData = $request->validate([
-            "WelcomeText" => 'required|string',
+            "WelcomeSubHeaderText" => 'required|string',
+            "WelcomeMainHeaderText" => 'required|string',
+            "WelcomeToText" => 'required|string',
+            "FacilitiesGolfCourseHeaderText" => 'required|string',
             "FacilitiesGolfCourseText" => 'required|string',
+            "FacilitiesTournamentsHeaderText" => 'required|string',
             "FacilitiesTournamentsText" => 'required|string',
+            "FacilitiesCaddiesHeaderText" => 'required|string',
             "FacilitiesCaddiesText" => 'required|string',
+            "FacilitiesGreenFieldsHeaderText" => 'required|string',
             "FacilitiesGreenFieldsText" => 'required|string',
             "BookingPanelText" => 'required|string',
+            "NewsText" => 'required|string',
             "MembershipPanelHeaderText" => 'required|string',
             "MembershipPanelSubText" => 'required|string',
             "TakeATourPanelHeaderText" => 'required|string',

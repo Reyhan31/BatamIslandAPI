@@ -42,6 +42,7 @@ use App\Http\Controllers\PackageTripPanel2Controller;
 use App\Http\Controllers\PackageTripPanel1ContentController;
 use App\Http\Controllers\PackageTripPanel2ContentController;
 use App\Http\Controllers\PackageTextController;
+use App\Http\Controllers\LogoIconController;
 use App\Models\Bookings;
 
 /*
@@ -121,6 +122,9 @@ Route::get('/getFile/icon/web', [WebIconController::class, 'getFile']);
 
 Route::post('/upload/icon/instagram', [InstagramIconController::class, 'store']);
 Route::get('/getFile/icon/instagram', [InstagramIconController::class, 'getFile']);
+
+Route::post('/upload/icon/logo', [LogoIconController::class, 'store']);
+Route::get('/getFile/icon/logo', [LogoIconController::class, 'getFile']);
 
 Route::post('/upload/aboutus/AboutUsPanel', [AboutUsPanelController::class, 'store']);
 Route::get('/getFile/aboutus/AboutUsPanel', [AboutUsPanelController::class, 'getFile']);

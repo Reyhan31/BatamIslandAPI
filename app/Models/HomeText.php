@@ -12,12 +12,19 @@ class HomeText extends Model
     protected $table = 'hometext';
 
     protected $fillable = [
-        "WelcomeText",
+        "WelcomeSubHeaderText",
+        "WelcomeMainHeaderText",
+        "WelcomeToText",
+        "FacilitiesGolfCourseHeaderText",
         "FacilitiesGolfCourseText",
+        "FacilitiesTournamentsHeaderText",
         "FacilitiesTournamentsText",
+        "FacilitiesCaddiesHeaderText",
         "FacilitiesCaddiesText",
+        "FacilitiesGreenFieldsHeaderText",
         "FacilitiesGreenFieldsText",
         "BookingPanelText",
+        "NewsText",
         "MembershipPanelHeaderText",
         "MembershipPanelSubText",
         "TakeATourPanelHeaderText",

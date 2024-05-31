@@ -14,11 +14,10 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('aboutUsText', function (Blueprint $table) {
+        Schema::create('logoIcon', function (Blueprint $table) {
             $table->id();
-            $table->longText("AboutUsText");
-            $table->longText("HeaderContentText");
-            $table->longText("ContentText");
+            $table->string("filename");
+            $table->string("mime_type");
             $table->timestamps();
         });
     }
