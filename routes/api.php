@@ -43,6 +43,7 @@ use App\Http\Controllers\PackageTripPanel1ContentController;
 use App\Http\Controllers\PackageTripPanel2ContentController;
 use App\Http\Controllers\PackageTextController;
 use App\Http\Controllers\LogoIconController;
+use App\Http\Controllers\RecipientMailController;
 use App\Models\Bookings;
 
 /*
@@ -178,6 +179,8 @@ Route::get('/getFile/PackageTripPanel2Content', [PackageTripPanel2ContentControl
 
 Route::get('/PackageText/getText', [PackageTextController::class, 'getText']);
 Route::resource('PackageText', PackageTextController::class);
+
+Route::resource('RecipientMail', RecipientMailController::class);
 
 Route::group([
     'middleware' => 'api',

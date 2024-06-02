@@ -8,6 +8,7 @@ use App\Mail\bookingsMail;
 use App\Mail\contactUsMail;
 use App\Mail\membershipMail;
 use App\Mail\subscribeMail;
+use App\Models\RecipientMail;
 
 class MailController extends Controller
 {
@@ -20,10 +21,11 @@ class MailController extends Controller
 
     public function sendBookingMail(Request $request){
         try{
+            $recipients = RecipientMail::all();
 
-            Mail::to(env("MAIL_TO"))->send(new bookingsMail($request));
-            Mail::to(env("MAIL_TO_2"))->send(new bookingsMail($request));
-            Mail::to(env("MAIL_TO_3"))->send(new bookingsMail($request));
+            foreach ($recipients as $recipient) {
+                Mail::to($recipient->email)->send(new bookingsMail($request));
+            }
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -37,10 +39,12 @@ class MailController extends Controller
 
     public function sendContactUsMail(Request $request){
         try{
-
-            Mail::to(env("MAIL_TO"))->send(new contactUsMail($request));
-            Mail::to(env("MAIL_TO_2"))->send(new contactUsMail($request));
-            Mail::to(env("MAIL_TO_3"))->send(new contactUsMail($request));
+            $recipients = RecipientMail::all();
+            
+            foreach ($recipients as $recipient) {
+                Mail::to($recipient->email)->send(new contactUsMail($request));
+            }
+            
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -54,10 +58,12 @@ class MailController extends Controller
 
     public function sendMembershipMail(Request $request){
         try{
-
-            Mail::to(env("MAIL_TO"))->send(new membershipMail($request));
-            Mail::to(env("MAIL_TO_2"))->send(new membershipMail($request));
-            Mail::to(env("MAIL_TO_3"))->send(new membershipMail($request));
+            $recipients = RecipientMail::all();
+                        
+            foreach ($recipients as $recipient) {
+                Mail::to($recipient->email)->send(new membershipMail($request));
+            }
+            
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
@@ -70,10 +76,12 @@ class MailController extends Controller
     }
     public function sendSubscribeMail(Request $request){
         try{
-
-            Mail::to(env("MAIL_TO"))->send(new subscribeMail($request));
-            Mail::to(env("MAIL_TO_2"))->send(new subscribeMail($request));
-            Mail::to(env("MAIL_TO_3"))->send(new subscribeMail($request));
+            $recipients = RecipientMail::all();
+            
+            foreach ($recipients as $recipient) {
+                Mail::to($recipient->email)->send(new subscribeMail($request));
+            }
+            
             return response()->json([
                 'message' => 'Email sent!',        
             ], 200);
