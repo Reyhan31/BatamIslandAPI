@@ -196,6 +196,8 @@ class BookingsController extends Controller
                     $booking->save();
 
                     Mail::to(env("MAIL_TO"))->send(new callbackMail($booking));
+                    Mail::to(env("MAIL_TO_2"))->send(new callbackMail($booking));
+                    Mail::to(env("MAIL_TO_3"))->send(new callbackMail($booking));
 
                     return response()->json([
                         'message' => 'Booking status updated successfully',
@@ -203,31 +205,21 @@ class BookingsController extends Controller
                     ], 200);
                 } else {
                     Mail::to(env("MAIL_TO"))->send(new ErrorMail("Booking with the provided custom_id (external_id) not found"));
+                    Mail::to(env("MAIL_TO_2"))->send(new ErrorMail("Booking with the provided custom_id (external_id) not found"));
+                    Mail::to(env("MAIL_TO_3"))->send(new ErrorMail("Booking with the provided custom_id (external_id) not found"));
                     return response()->json([
                         'error' => 'Booking with the provided custom_id (external_id) not found'
                     ], 404);
                 }
             } catch (Exception $error) {
                 Mail::to(env("MAIL_TO"))->send(new ErrorMail("Failed"));
+                Mail::to(env("MAIL_TO_2"))->send(new ErrorMail("Failed"));
+                Mail::to(env("MAIL_TO_3"))->send(new ErrorMail("Failed"));
                 return response()->json([
                     'message' => 'Failed',
                     'error' => $error
                 ], 400);
             }
-
-
-            $test['id'] = $request['id'];
-            $test['external_id'] = $request['external_id'];
-            $test['user_id'] = $request['user_id'];
-            $test['status'] = $request['status'];
-            $test['paid_amount'] = $request['paid_amount'];
-            $test['paid_at'] = $request['paid_at'];
-            $test['payment_channel'] = $request['payment_channel'];
-            $test['payment_destination'] = $request['payment_destination'];
-
-            return response()->json([
-                'data' => $test
-            ], 200);
         } else {
             return response()->json(null, 403);
         }
